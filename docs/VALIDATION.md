@@ -14,4 +14,4 @@ These are inventory and interoperability results, not an accuracy benchmark, run
 
 The first SDK run stalled inside a restricted Windows sandbox. The same tests passed with normal Windows subprocess permissions. The passing results use that environment. No GUI host, OpenCode integration or LLM-driven agent session has been tested.
 
-GitHub Actions is configured for Python 3.11, 3.12 and 3.13, including installation of the official SDK test extra. The hosted workflow has not run because publishing is deferred.
+GitHub Actions passed on Python 3.11, 3.12 and 3.13 on Linux, including installation of the official SDK test extra: [hosted run](https://github.com/itsaksh/repo-context-mcp/actions/runs/41320561553). The source and demo evidence are public in [itsaksh/repo-context-mcp](https://github.com/itsaksh/repo-context-mcp).
