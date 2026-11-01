@@ -1,0 +1,1610 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Repository Context MCP demo</title><style>body{font:16px/1.6 system-ui,sans-serif;max-width:1000px;margin:40px auto;padding:0 24px;color:#182238;background:#f6f8fb}header,details{background:white;padding:24px;margin:16px 0;border:1px solid #d9e0eb;border-radius:12px}h1{margin-top:0;font-size:32px}summary{cursor:pointer;font-weight:700}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f1f4f8;padding:16px;font:13px/1.5 Consolas,monospace}small{color:#526078}a{color:#2457af}</style><header><h1>Repository Context MCP</h1><p>Official SDK client replay on <a href="https://github.com/pallets/click">the analyzed repository</a>.</p><p><b>91</b> Python files · <b>2078</b> symbols · <b>8</b> tools exercised</p><small>Revision 2247b35ea1c47c727d7a06e51fa280e12a863ff6<br>SDK 2.3.0 · Protocol 2025-11-25</small><p>Inventory counts are not accuracy scores. This demo executes tools through MCP; it does not run an LLM.</p></header><details><summary>repository_summary</summary><h3>Arguments</h3><pre>{}</pre><h3>Result</h3><pre>{
+  &quot;files&quot;: 91,
+  &quot;symbols&quot;: 2078,
+  &quot;calls&quot;: 7084,
+  &quot;static_references&quot;: 1984,
+  &quot;unresolved_calls&quot;: 5100,
+  &quot;skipped&quot;: [],
+  &quot;truncated&quot;: false,
+  &quot;indexed_utf8_bytes&quot;: 1003633,
+  &quot;limits&quot;: {
+    &quot;max_files&quot;: 500,
+    &quot;max_file_bytes&quot;: 262144,
+    &quot;max_total_bytes&quot;: 16777216
+  },
+  &quot;snapshot_sha256&quot;: &quot;4f4415befc79d59be2c0e75b265d3f3124cfec4e3fcdfdcb03c804c4ee9bc9c6&quot;,
+  &quot;call_resolution&quot;: &quot;Conservative static references, not runtime guarantees. Instance dispatch remains unresolved.&quot;
+}</pre></details><details><summary>list_symbols</summary><h3>Arguments</h3><pre>{
+  &quot;query&quot;: &quot;echo&quot;,
+  &quot;limit&quot;: 100
+}</pre><h3>Result</h3><pre>[
+  {
+    &quot;path&quot;: &quot;src/click/core.py&quot;,
+    &quot;name&quot;: &quot;_echo_aborted&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 103,
+    &quot;definition_line&quot;: 103,
+    &quot;end_line&quot;: 105,
+    &quot;signature&quot;: &quot;_echo_aborted()&quot;,
+    &quot;docstring&quot;: &quot;Write the final abort message to standard error.&quot;,
+    &quot;citation&quot;: &quot;src/click/core.py:103&quot;
+  },
+  {
+    &quot;path&quot;: &quot;src/click/termui.py&quot;,
+    &quot;name&quot;: &quot;echo_via_pager&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 367,
+    &quot;definition_line&quot;: 367,
+    &quot;end_line&quot;: 399,
+    &quot;signature&quot;: &quot;echo_via_pager(text_or_generator: cabc.Iterable[str] | t.Callable[[], cabc.Iterable[str]] | str, color: bool | None=None)&quot;,
+    &quot;docstring&quot;: &quot;This function takes a text and shows it via an environment specific\npager on stdout.\n\n.. versionchanged:: 3.0\n   Added the `color` flag.\n\n:param text_or_generator: the text to page, or alternatively, a\n                          generator emitting the text to page.\n:param color: controls if the pager supports ANSI colors or not.  The\n              default is autodetection.&quot;,
+    &quot;citation&quot;: &quot;src/click/termui.py:367&quot;
+  },
+  {
+    &quot;path&quot;: &quot;src/click/termui.py&quot;,
+    &quot;name&quot;: &quot;secho&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 780,
+    &quot;definition_line&quot;: 780,
+    &quot;end_line&quot;: 811,
+    &quot;signature&quot;: &quot;secho(message: t.Any | None=None, file: t.IO[t.AnyStr] | None=None, nl: bool=True, err: bool=False, color: bool | None=None, **styles: t.Any)&quot;,
+    &quot;docstring&quot;: &quot;This function combines :func:`echo` and :func:`style` into one\ncall.  As such the following two calls are the same::\n\n    click.secho(&#x27;Hello World!&#x27;, fg=&#x27;green&#x27;)\n    click.echo(click.style(&#x27;Hello World!&#x27;, fg=&#x27;green&#x27;))\n\nAll keyword arguments are forwarded to the underlying functions\ndepending on which one they go with.\n\nNon-string types will be converted to :class:`str`. However,\n:class:`bytes` are passed directly to :meth:`echo` without applying\nstyle. If you want to style bytes that represent text, call\n:meth:`bytes.decode` first.\n\n.. versionchanged:: 8.0\n    A non-string ``message`` is converted to a string. Bytes are\n    passed through without style applied.\n\n.. versionadded:: 2.0&quot;,
+    &quot;citation&quot;: &quot;src/click/termui.py:780&quot;
+  },
+  {
+    &quot;path&quot;: &quot;src/click/testing.py&quot;,
+    &quot;name&quot;: &quot;EchoingStdin&quot;,
+    &quot;kind&quot;: &quot;class&quot;,
+    &quot;line&quot;: 32,
+    &quot;definition_line&quot;: 32,
+    &quot;end_line&quot;: 67,
+    &quot;signature&quot;: &quot;EchoingStdin&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;src/click/testing.py:32&quot;
+  },
+  {
+    &quot;path&quot;: &quot;src/click/testing.py&quot;,
+    &quot;name&quot;: &quot;EchoingStdin.__init__&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 37,
+    &quot;definition_line&quot;: 37,
+    &quot;end_line&quot;: 40,
+    &quot;signature&quot;: &quot;__init__(self, input: t.BinaryIO, output: t.BinaryIO)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;src/click/testing.py:37&quot;
+  },
+  {
+    &quot;path&quot;: &quot;src/click/testing.py&quot;,
+    &quot;name&quot;: &quot;EchoingStdin.__getattr__&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 42,
+    &quot;definition_line&quot;: 42,
+    &quot;end_line&quot;: 43,
+    &quot;signature&quot;: &quot;__getattr__(self, x: str)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;src/click/testing.py:42&quot;
+  },
+  {
+    &quot;path&quot;: &quot;src/click/testing.py&quot;,
+    &quot;name&quot;: &quot;EchoingStdin._echo&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 45,
+    &quot;definition_line&quot;: 45,
+    &quot;end_line&quot;: 49,
+    &quot;signature&quot;: &quot;_echo(self, rv: bytes)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;src/click/testing.py:45&quot;
+  },
+  {
+    &quot;path&quot;: &quot;src/click/testing.py&quot;,
+    &quot;name&quot;: &quot;EchoingStdin.read&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 51,
+    &quot;definition_line&quot;: 51,
+    &quot;end_line&quot;: 52,
+    &quot;signature&quot;: &quot;read(self, n: int=-1)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;src/click/testing.py:51&quot;
+  },
+  {
+    &quot;path&quot;: &quot;src/click/testing.py&quot;,
+    &quot;name&quot;: &quot;EchoingStdin.read1&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 54,
+    &quot;definition_line&quot;: 54,
+    &quot;end_line&quot;: 55,
+    &quot;signature&quot;: &quot;read1(self, n: int=-1)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;src/click/testing.py:54&quot;
+  },
+  {
+    &quot;path&quot;: &quot;src/click/testing.py&quot;,
+    &quot;name&quot;: &quot;EchoingStdin.readline&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 57,
+    &quot;definition_line&quot;: 57,
+    &quot;end_line&quot;: 58,
+    &quot;signature&quot;: &quot;readline(self, n: int=-1)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;src/click/testing.py:57&quot;
+  },
+  {
+    &quot;path&quot;: &quot;src/click/testing.py&quot;,
+    &quot;name&quot;: &quot;EchoingStdin.readlines&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 60,
+    &quot;definition_line&quot;: 60,
+    &quot;end_line&quot;: 61,
+    &quot;signature&quot;: &quot;readlines(self)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;src/click/testing.py:60&quot;
+  },
+  {
+    &quot;path&quot;: &quot;src/click/testing.py&quot;,
+    &quot;name&quot;: &quot;EchoingStdin.__iter__&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 63,
+    &quot;definition_line&quot;: 63,
+    &quot;end_line&quot;: 64,
+    &quot;signature&quot;: &quot;__iter__(self)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;src/click/testing.py:63&quot;
+  },
+  {
+    &quot;path&quot;: &quot;src/click/testing.py&quot;,
+    &quot;name&quot;: &quot;EchoingStdin.__repr__&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 66,
+    &quot;definition_line&quot;: 66,
+    &quot;end_line&quot;: 67,
+    &quot;signature&quot;: &quot;__repr__(self)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;src/click/testing.py:66&quot;
+  },
+  {
+    &quot;path&quot;: &quot;src/click/testing.py&quot;,
+    &quot;name&quot;: &quot;_pause_echo&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 70,
+    &quot;definition_line&quot;: 71,
+    &quot;end_line&quot;: 77,
+    &quot;signature&quot;: &quot;_pause_echo(stream: EchoingStdin | None)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;src/click/testing.py:71&quot;
+  },
+  {
+    &quot;path&quot;: &quot;src/click/utils.py&quot;,
+    &quot;name&quot;: &quot;echo&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 240,
+    &quot;definition_line&quot;: 240,
+    &quot;end_line&quot;: 334,
+    &quot;signature&quot;: &quot;echo(message: object=None, file: t.IO[t.Any] | None=None, nl: bool=True, err: bool=False, color: bool | None=None)&quot;,
+    &quot;docstring&quot;: &quot;Print a message and newline to stdout or a file. This should be\nused instead of :func:`print` because it provides better support\nfor different data, files, and environments.\n\nCompared to :func:`print`, this does the following:\n\n-   Ensures that the output encoding is not misconfigured on Linux.\n-   Supports Unicode in the Windows console.\n-   Supports writing to binary outputs, and supports writing bytes\n    to text outputs.\n-   Removes ANSI color and style codes if the output does not look\n    like an interactive terminal.\n-   Always flushes the output.\n\n:param message: The string or bytes to output. Other objects are\n    converted to strings.\n:param file: The file to write to. Defaults to ``stdout``.\n:param err: Write to ``stderr`` instead of ``stdout``.\n:param nl: Print a newline after &quot;,
+    &quot;citation&quot;: &quot;src/click/utils.py:240&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_termui.py&quot;,
+    &quot;name&quot;: &quot;test_secho&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 295,
+    &quot;definition_line&quot;: 295,
+    &quot;end_line&quot;: 299,
+    &quot;signature&quot;: &quot;test_secho(runner)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_termui.py:295&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_termui.py&quot;,
+    &quot;name&quot;: &quot;test_secho_non_text&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 302,
+    &quot;definition_line&quot;: 306,
+    &quot;end_line&quot;: 310,
+    &quot;signature&quot;: &quot;test_secho_non_text(runner, value, expect)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_termui.py:306&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_termui.py&quot;,
+    &quot;name&quot;: &quot;test_echo_via_pager_real_pager_handles_ansi&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 752,
+    &quot;definition_line&quot;: 763,
+    &quot;end_line&quot;: 774,
+    &quot;signature&quot;: &quot;test_echo_via_pager_real_pager_handles_ansi(monkeypatch, capfd, color, expected)&quot;,
+    &quot;docstring&quot;: &quot;``echo_via_pager`` should honor ``color`` like ``get_pager_file``.&quot;,
+    &quot;citation&quot;: &quot;tests/test_termui.py:763&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_termui.py&quot;,
+    &quot;name&quot;: &quot;test_echo_via_pager_streams_each_write&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 928,
+    &quot;definition_line&quot;: 928,
+    &quot;end_line&quot;: 963,
+    &quot;signature&quot;: &quot;test_echo_via_pager_streams_each_write(monkeypatch)&quot;,
+    &quot;docstring&quot;: &quot;Each write is flushed so a slow generator streams to the pager\nincrementally instead of buffering until the end (issues #3242, #2542).&quot;,
+    &quot;citation&quot;: &quot;tests/test_termui.py:928&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_termui.py&quot;,
+    &quot;name&quot;: &quot;test_echo_via_pager_streams_each_write.RecordingStream&quot;,
+    &quot;kind&quot;: &quot;class&quot;,
+    &quot;line&quot;: 934,
+    &quot;definition_line&quot;: 934,
+    &quot;end_line&quot;: 944,
+    &quot;signature&quot;: &quot;RecordingStream&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_termui.py:934&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_termui.py&quot;,
+    &quot;name&quot;: &quot;test_echo_via_pager_streams_each_write.RecordingStream.__init__&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 935,
+    &quot;definition_line&quot;: 935,
+    &quot;end_line&quot;: 937,
+    &quot;signature&quot;: &quot;__init__(self)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_termui.py:935&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_termui.py&quot;,
+    &quot;name&quot;: &quot;test_echo_via_pager_streams_each_write.RecordingStream.write&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 939,
+    &quot;definition_line&quot;: 939,
+    &quot;end_line&quot;: 941,
+    &quot;signature&quot;: &quot;write(self, s)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_termui.py:939&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_termui.py&quot;,
+    &quot;name&quot;: &quot;test_echo_via_pager_streams_each_write.RecordingStream.flush&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 943,
+    &quot;definition_line&quot;: 943,
+    &quot;end_line&quot;: 944,
+    &quot;signature&quot;: &quot;flush(self)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_termui.py:943&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_termui.py&quot;,
+    &quot;name&quot;: &quot;test_echo_via_pager_streams_each_write.generate&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 950,
+    &quot;definition_line&quot;: 950,
+    &quot;end_line&quot;: 953,
+    &quot;signature&quot;: &quot;generate()&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_termui.py:950&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_termui.py&quot;,
+    &quot;name&quot;: &quot;test_echo_via_pager_tty_pager_missing&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 1040,
+    &quot;definition_line&quot;: 1040,
+    &quot;end_line&quot;: 1060,
+    &quot;signature&quot;: &quot;test_echo_via_pager_tty_pager_missing(runner, monkeypatch)&quot;,
+    &quot;docstring&quot;: &quot;``echo_via_pager`` through the tty fallback keeps ``CliRunner`` working.\n\nRegression for issue #3449 via the pager fallback: a tty with ``PAGER``\npointing at a missing binary used to close the runner&#x27;s stdout, breaking\n``CliRunner.invoke``.&quot;,
+    &quot;citation&quot;: &quot;tests/test_termui.py:1040&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_termui.py&quot;,
+    &quot;name&quot;: &quot;test_echo_via_pager_tty_pager_missing.cli&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 1054,
+    &quot;definition_line&quot;: 1055,
+    &quot;end_line&quot;: 1056,
+    &quot;signature&quot;: &quot;cli()&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_termui.py:1055&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_termui.py&quot;,
+    &quot;name&quot;: &quot;_page_with_echo_via_pager&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 1194,
+    &quot;definition_line&quot;: 1194,
+    &quot;end_line&quot;: 1195,
+    &quot;signature&quot;: &quot;_page_with_echo_via_pager()&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_termui.py:1194&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_testing.py&quot;,
+    &quot;name&quot;: &quot;test_echo_stdin_stream&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 34,
+    &quot;definition_line&quot;: 34,
+    &quot;end_line&quot;: 49,
+    &quot;signature&quot;: &quot;test_echo_stdin_stream()&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_testing.py:34&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_testing.py&quot;,
+    &quot;name&quot;: &quot;test_echo_stdin_stream.test&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 35,
+    &quot;definition_line&quot;: 36,
+    &quot;end_line&quot;: 44,
+    &quot;signature&quot;: &quot;test()&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_testing.py:36&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_testing.py&quot;,
+    &quot;name&quot;: &quot;test_echo_stdin_prompts&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 52,
+    &quot;definition_line&quot;: 52,
+    &quot;end_line&quot;: 89,
+    &quot;signature&quot;: &quot;test_echo_stdin_prompts()&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_testing.py:52&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_testing.py&quot;,
+    &quot;name&quot;: &quot;test_echo_stdin_prompts.test_python_input&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 53,
+    &quot;definition_line&quot;: 54,
+    &quot;end_line&quot;: 56,
+    &quot;signature&quot;: &quot;test_python_input()&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_testing.py:54&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_testing.py&quot;,
+    &quot;name&quot;: &quot;test_echo_stdin_prompts.test_prompt&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 63,
+    &quot;definition_line&quot;: 65,
+    &quot;end_line&quot;: 66,
+    &quot;signature&quot;: &quot;test_prompt(foo)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_testing.py:65&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_testing.py&quot;,
+    &quot;name&quot;: &quot;test_echo_stdin_prompts.test_hidden_prompt&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 72,
+    &quot;definition_line&quot;: 74,
+    &quot;end_line&quot;: 75,
+    &quot;signature&quot;: &quot;test_hidden_prompt(foo)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_testing.py:74&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_testing.py&quot;,
+    &quot;name&quot;: &quot;test_echo_stdin_prompts.test_multiple_prompts&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 81,
+    &quot;definition_line&quot;: 84,
+    &quot;end_line&quot;: 85,
+    &quot;signature&quot;: &quot;test_multiple_prompts(foo, bar)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_testing.py:84&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_testing.py&quot;,
+    &quot;name&quot;: &quot;test_getchar.getchar_echo&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 152,
+    &quot;definition_line&quot;: 153,
+    &quot;end_line&quot;: 154,
+    &quot;signature&quot;: &quot;getchar_echo()&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_testing.py:153&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_testing.py&quot;,
+    &quot;name&quot;: &quot;test_with_echo_via_pager&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 260,
+    &quot;definition_line&quot;: 260,
+    &quot;end_line&quot;: 268,
+    &quot;signature&quot;: &quot;test_with_echo_via_pager()&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_testing.py:260&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_testing.py&quot;,
+    &quot;name&quot;: &quot;test_with_echo_via_pager.cli&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 261,
+    &quot;definition_line&quot;: 262,
+    &quot;end_line&quot;: 263,
+    &quot;signature&quot;: &quot;cli()&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_testing.py:262&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_utils/test_echo.py&quot;,
+    &quot;name&quot;: &quot;test_echo&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 12,
+    &quot;definition_line&quot;: 12,
+    &quot;end_line&quot;: 33,
+    &quot;signature&quot;: &quot;test_echo(runner)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_utils/test_echo.py:12&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_utils/test_echo.py&quot;,
+    &quot;name&quot;: &quot;test_echo.cli&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 23,
+    &quot;definition_line&quot;: 24,
+    &quot;end_line&quot;: 25,
+    &quot;signature&quot;: &quot;cli()&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_utils/test_echo.py:24&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_utils/test_echo.py&quot;,
+    &quot;name&quot;: &quot;test_echo_custom_file&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 36,
+    &quot;definition_line&quot;: 36,
+    &quot;end_line&quot;: 43,
+    &quot;signature&quot;: &quot;test_echo_custom_file()&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_utils/test_echo.py:36&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_utils/test_echo.py&quot;,
+    &quot;name&quot;: &quot;test_echo_no_streams&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 46,
+    &quot;definition_line&quot;: 46,
+    &quot;end_line&quot;: 52,
+    &quot;signature&quot;: &quot;test_echo_no_streams(monkeypatch, runner)&quot;,
+    &quot;docstring&quot;: &quot;echo should not fail when stdout and stderr are None with pythonw on Windows.&quot;,
+    &quot;citation&quot;: &quot;tests/test_utils/test_echo.py:46&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_utils/test_echo.py&quot;,
+    &quot;name&quot;: &quot;test_echo_with_capsys&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 55,
+    &quot;definition_line&quot;: 55,
+    &quot;end_line&quot;: 58,
+    &quot;signature&quot;: &quot;test_echo_with_capsys(capsys)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_utils/test_echo.py:55&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_utils/test_echo.py&quot;,
+    &quot;name&quot;: &quot;test_echo_color_flag&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 61,
+    &quot;definition_line&quot;: 61,
+    &quot;end_line&quot;: 88,
+    &quot;signature&quot;: &quot;test_echo_color_flag(monkeypatch, capfd)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_utils/test_echo.py:61&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_utils/test_echo.py&quot;,
+    &quot;name&quot;: &quot;test_echo_writing_to_standard_error&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 91,
+    &quot;definition_line&quot;: 92,
+    &quot;end_line&quot;: 172,
+    &quot;signature&quot;: &quot;test_echo_writing_to_standard_error(capfd, monkeypatch)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_utils/test_echo.py:92&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_utils/test_echo.py&quot;,
+    &quot;name&quot;: &quot;test_echo_writing_to_standard_error.emulate_input&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 93,
+    &quot;definition_line&quot;: 93,
+    &quot;end_line&quot;: 95,
+    &quot;signature&quot;: &quot;emulate_input(text)&quot;,
+    &quot;docstring&quot;: &quot;Emulate keyboard input.&quot;,
+    &quot;citation&quot;: &quot;tests/test_utils/test_echo.py:93&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_utils/test_echo_via_pager.py&quot;,
+    &quot;name&quot;: &quot;_test_gen_func_echo&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 44,
+    &quot;definition_line&quot;: 44,
+    &quot;end_line&quot;: 47,
+    &quot;signature&quot;: &quot;_test_gen_func_echo(file=None)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_utils/test_echo_via_pager.py:44&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_utils/test_echo_via_pager.py&quot;,
+    &quot;name&quot;: &quot;test_echo_via_pager&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 55,
+    &quot;definition_line&quot;: 155,
+    &quot;end_line&quot;: 190,
+    &quot;signature&quot;: &quot;test_echo_via_pager(monkeypatch, capfd, pager_cmd, test, tmp_path)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_utils/test_echo_via_pager.py:155&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_utils/test_echo_via_pager.py&quot;,
+    &quot;name&quot;: &quot;test_echo_via_pager_yields_before_exception&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 193,
+    &quot;definition_line&quot;: 194,
+    &quot;end_line&quot;: 225,
+    &quot;signature&quot;: &quot;test_echo_via_pager_yields_before_exception(monkeypatch, tmp_path)&quot;,
+    &quot;docstring&quot;: &quot;A generator that yields then raises: click writes the partial output to\nthe pager stream before propagating the exception.\n\nThe pager file content is intentionally NOT asserted: pipe-drain timing\nbetween click and the pager subprocess is outside click&#x27;s control\n(#2899, #3470). Spying on ``_PagerWriter.write`` records what click sent\nto the pager, which is deterministic regardless of scheduling.&quot;,
+    &quot;citation&quot;: &quot;tests/test_utils/test_echo_via_pager.py:194&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_utils/test_echo_via_pager.py&quot;,
+    &quot;name&quot;: &quot;test_echo_via_pager_yields_before_exception.spy&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 209,
+    &quot;definition_line&quot;: 209,
+    &quot;end_line&quot;: 211,
+    &quot;signature&quot;: &quot;spy(self, text)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_utils/test_echo_via_pager.py:209&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_utils/test_echo_via_pager.py&quot;,
+    &quot;name&quot;: &quot;test_stress_echo_via_pager_exception_cleanup&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 228,
+    &quot;definition_line&quot;: 231,
+    &quot;end_line&quot;: 259,
+    &quot;signature&quot;: &quot;test_stress_echo_via_pager_exception_cleanup(_, monkeypatch, tmp_path)&quot;,
+    &quot;docstring&quot;: &quot;Repeated exceptions during ``echo_via_pager`` must not leak subprocesses.\n\nRegression coverage for the cleanup path in ``_pipepager``&#x27;s exception\nhandler (issue #2899, PR #3470). Each iteration spawns a real pager\nsubprocess, raises before any data is written and check there is no leak.&quot;,
+    &quot;citation&quot;: &quot;tests/test_utils/test_echo_via_pager.py:231&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_utils/test_echo_via_pager.py&quot;,
+    &quot;name&quot;: &quot;test_stress_echo_via_pager_exception_cleanup.tracking_popen&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 244,
+    &quot;definition_line&quot;: 244,
+    &quot;end_line&quot;: 247,
+    &quot;signature&quot;: &quot;tracking_popen(*args, **kwargs)&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_utils/test_echo_via_pager.py:244&quot;
+  },
+  {
+    &quot;path&quot;: &quot;tests/test_utils/test_prompt.py&quot;,
+    &quot;name&quot;: &quot;test_prompts_eof.echo&quot;,
+    &quot;kind&quot;: &quot;function&quot;,
+    &quot;line&quot;: 93,
+    &quot;definition_line&quot;: 94,
+    &quot;end_line&quot;: 96,
+    &quot;signature&quot;: &quot;echo()&quot;,
+    &quot;docstring&quot;: &quot;&quot;,
+    &quot;citation&quot;: &quot;tests/test_utils/test_prompt.py:94&quot;
+  }
+]</pre></details><details><summary>get_symbol_context</summary><h3>Arguments</h3><pre>{
+  &quot;path&quot;: &quot;src/click/utils.py&quot;,
+  &quot;name&quot;: &quot;echo&quot;,
+  &quot;max_chars&quot;: 2000
+}</pre><h3>Result</h3><pre>{
+  &quot;path&quot;: &quot;src/click/utils.py&quot;,
+  &quot;name&quot;: &quot;echo&quot;,
+  &quot;kind&quot;: &quot;function&quot;,
+  &quot;line&quot;: 240,
+  &quot;definition_line&quot;: 240,
+  &quot;end_line&quot;: 334,
+  &quot;signature&quot;: &quot;echo(message: object=None, file: t.IO[t.Any] | None=None, nl: bool=True, err: bool=False, color: bool | None=None)&quot;,
+  &quot;docstring&quot;: &quot;Print a message and newline to stdout or a file. This should be\nused instead of :func:`print` because it provides better support\nfor different data, files, and environments.\n\nCompared to :func:`print`, this does the following:\n\n-   Ensures that the output encoding is not misconfigured on Linux.\n-   Supports Unicode in the Windows console.\n-   Supports writing to binary outputs, and supports writing bytes\n    to text outputs.\n-   Removes ANSI color and style codes if the output does not look\n    like an interactive terminal.\n-   Always flushes the output.\n\n:param message: The string or bytes to output. Other objects are\n    converted to strings.\n:param file: The file to write to. Defaults to ``stdout``.\n:param err: Write to ``stderr`` instead of ``stdout``.\n:param nl: Print a newline after &quot;,
+  &quot;excerpt_end_line&quot;: 286,
+  &quot;truncated&quot;: true,
+  &quot;source&quot;: &quot;240: def echo(\n241:     message: object = None,\n242:     file: t.IO[t.Any] | None = None,\n243:     nl: bool = True,\n244:     err: bool = False,\n245:     color: bool | None = None,\n246: ) -&gt; None:\n247:     \&quot;\&quot;\&quot;Print a message and newline to stdout or a file. This should be\n248:     used instead of :func:`print` because it provides better support\n249:     for different data, files, and environments.\n250: \n251:     Compared to :func:`print`, this does the following:\n252: \n253:     -   Ensures that the output encoding is not misconfigured on Linux.\n254:     -   Supports Unicode in the Windows console.\n255:     -   Supports writing to binary outputs, and supports writing bytes\n256:         to text outputs.\n257:     -   Removes ANSI color and style codes if the output does not look\n258:         like an interactive terminal.\n259:     -   Always flushes the output.\n260: \n261:     :param message: The string or bytes to output. Other objects are\n262:         converted to strings.\n263:     :param file: The file to write to. Defaults to ``stdout``.\n264:     :param err: Write to ``stderr`` instead of ``stdout``.\n265:     :param nl: Print a newline after the message. Enabled by default.\n266:     :param color: Force showing or hiding colors and other styles. By\n267:         default Click will remove color if the output does not look like\n268:         an interactive terminal.\n269: \n270:     .. versionchanged:: 8.5.0\n271:         Colorama is no longer used for color on Windows.\n272: \n273:     .. versionchanged:: 6.0\n274:         Support Unicode output on the Windows console. Click does not\n275:         modify ``sys.stdout``, so ``sys.stdout.write()`` and ``print()``\n276:         will still not support Unicode.\n277: \n278:     .. versionchanged:: 4.0\n279:         Added the ``color`` parameter.\n280: \n281:     .. versionadded:: 3.0\n282:         Added the ``err`` parameter.\n283: \n284:     .. versionchanged:: 2.0\n285:         Support colors on Windows if colorama is installed.\n286:     \&quot;\&quot;\&quot;&quot;,
+  &quot;source_characters&quot;: 2000,
+  &quot;max_characters&quot;: 2000,
+  &quot;citation&quot;: &quot;src/click/utils.py:240&quot;,
+  &quot;file_sha256&quot;: &quot;4720e22c292047ff1a747546b1ba80e96d1d8e8158e2e21ff01cdddb6498db17&quot;
+}</pre></details><details><summary>get_imports</summary><h3>Arguments</h3><pre>{
+  &quot;path&quot;: &quot;src/click/utils.py&quot;
+}</pre><h3>Result</h3><pre>[
+  {
+    &quot;module&quot;: &quot;__future__&quot;,
+    &quot;level&quot;: 0,
+    &quot;member&quot;: &quot;annotations&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 1,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;absolute_module&quot;: &quot;__future__&quot;,
+    &quot;indexed_paths&quot;: [],
+    &quot;citation&quot;: &quot;src/click/utils.py:1&quot;
+  },
+  {
+    &quot;module&quot;: &quot;collections.abc&quot;,
+    &quot;alias&quot;: &quot;cabc&quot;,
+    &quot;line&quot;: 3,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;level&quot;: 0,
+    &quot;member&quot;: null,
+    &quot;absolute_module&quot;: &quot;collections.abc&quot;,
+    &quot;indexed_paths&quot;: [],
+    &quot;citation&quot;: &quot;src/click/utils.py:3&quot;
+  },
+  {
+    &quot;module&quot;: &quot;os&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 4,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;level&quot;: 0,
+    &quot;member&quot;: null,
+    &quot;absolute_module&quot;: &quot;os&quot;,
+    &quot;indexed_paths&quot;: [],
+    &quot;citation&quot;: &quot;src/click/utils.py:4&quot;
+  },
+  {
+    &quot;module&quot;: &quot;re&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 5,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;level&quot;: 0,
+    &quot;member&quot;: null,
+    &quot;absolute_module&quot;: &quot;re&quot;,
+    &quot;indexed_paths&quot;: [],
+    &quot;citation&quot;: &quot;src/click/utils.py:5&quot;
+  },
+  {
+    &quot;module&quot;: &quot;sys&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 6,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;level&quot;: 0,
+    &quot;member&quot;: null,
+    &quot;absolute_module&quot;: &quot;sys&quot;,
+    &quot;indexed_paths&quot;: [],
+    &quot;citation&quot;: &quot;src/click/utils.py:6&quot;
+  },
+  {
+    &quot;module&quot;: &quot;typing&quot;,
+    &quot;alias&quot;: &quot;t&quot;,
+    &quot;line&quot;: 7,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;level&quot;: 0,
+    &quot;member&quot;: null,
+    &quot;absolute_module&quot;: &quot;typing&quot;,
+    &quot;indexed_paths&quot;: [],
+    &quot;citation&quot;: &quot;src/click/utils.py:7&quot;
+  },
+  {
+    &quot;module&quot;: &quot;functools&quot;,
+    &quot;level&quot;: 0,
+    &quot;member&quot;: &quot;update_wrapper&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 8,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;absolute_module&quot;: &quot;functools&quot;,
+    &quot;indexed_paths&quot;: [],
+    &quot;citation&quot;: &quot;src/click/utils.py:8&quot;
+  },
+  {
+    &quot;module&quot;: &quot;gettext&quot;,
+    &quot;level&quot;: 0,
+    &quot;member&quot;: &quot;gettext&quot;,
+    &quot;alias&quot;: &quot;_&quot;,
+    &quot;line&quot;: 9,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;absolute_module&quot;: &quot;gettext&quot;,
+    &quot;indexed_paths&quot;: [],
+    &quot;citation&quot;: &quot;src/click/utils.py:9&quot;
+  },
+  {
+    &quot;module&quot;: &quot;types&quot;,
+    &quot;level&quot;: 0,
+    &quot;member&quot;: &quot;ModuleType&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 10,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;absolute_module&quot;: &quot;types&quot;,
+    &quot;indexed_paths&quot;: [],
+    &quot;citation&quot;: &quot;src/click/utils.py:10&quot;
+  },
+  {
+    &quot;module&quot;: &quot;types&quot;,
+    &quot;level&quot;: 0,
+    &quot;member&quot;: &quot;TracebackType&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 11,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;absolute_module&quot;: &quot;types&quot;,
+    &quot;indexed_paths&quot;: [],
+    &quot;citation&quot;: &quot;src/click/utils.py:11&quot;
+  },
+  {
+    &quot;module&quot;: &quot;_compat&quot;,
+    &quot;level&quot;: 1,
+    &quot;member&quot;: &quot;_default_text_stderr&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 13,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;absolute_module&quot;: &quot;click._compat&quot;,
+    &quot;indexed_paths&quot;: [
+      &quot;src/click/_compat.py&quot;
+    ],
+    &quot;citation&quot;: &quot;src/click/utils.py:13&quot;
+  },
+  {
+    &quot;module&quot;: &quot;_compat&quot;,
+    &quot;level&quot;: 1,
+    &quot;member&quot;: &quot;_default_text_stdout&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 14,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;absolute_module&quot;: &quot;click._compat&quot;,
+    &quot;indexed_paths&quot;: [
+      &quot;src/click/_compat.py&quot;
+    ],
+    &quot;citation&quot;: &quot;src/click/utils.py:14&quot;
+  },
+  {
+    &quot;module&quot;: &quot;_compat&quot;,
+    &quot;level&quot;: 1,
+    &quot;member&quot;: &quot;_find_binary_writer&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 15,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;absolute_module&quot;: &quot;click._compat&quot;,
+    &quot;indexed_paths&quot;: [
+      &quot;src/click/_compat.py&quot;
+    ],
+    &quot;citation&quot;: &quot;src/click/utils.py:15&quot;
+  },
+  {
+    &quot;module&quot;: &quot;_compat&quot;,
+    &quot;level&quot;: 1,
+    &quot;member&quot;: &quot;binary_streams&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 16,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;absolute_module&quot;: &quot;click._compat&quot;,
+    &quot;indexed_paths&quot;: [
+      &quot;src/click/_compat.py&quot;
+    ],
+    &quot;citation&quot;: &quot;src/click/utils.py:16&quot;
+  },
+  {
+    &quot;module&quot;: &quot;_compat&quot;,
+    &quot;level&quot;: 1,
+    &quot;member&quot;: &quot;open_stream&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 17,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;absolute_module&quot;: &quot;click._compat&quot;,
+    &quot;indexed_paths&quot;: [
+      &quot;src/click/_compat.py&quot;
+    ],
+    &quot;citation&quot;: &quot;src/click/utils.py:17&quot;
+  },
+  {
+    &quot;module&quot;: &quot;_compat&quot;,
+    &quot;level&quot;: 1,
+    &quot;member&quot;: &quot;should_strip_ansi&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 18,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;absolute_module&quot;: &quot;click._compat&quot;,
+    &quot;indexed_paths&quot;: [
+      &quot;src/click/_compat.py&quot;
+    ],
+    &quot;citation&quot;: &quot;src/click/utils.py:18&quot;
+  },
+  {
+    &quot;module&quot;: &quot;_compat&quot;,
+    &quot;level&quot;: 1,
+    &quot;member&quot;: &quot;strip_ansi&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 19,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;absolute_module&quot;: &quot;click._compat&quot;,
+    &quot;indexed_paths&quot;: [
+      &quot;src/click/_compat.py&quot;
+    ],
+    &quot;citation&quot;: &quot;src/click/utils.py:19&quot;
+  },
+  {
+    &quot;module&quot;: &quot;_compat&quot;,
+    &quot;level&quot;: 1,
+    &quot;member&quot;: &quot;text_streams&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 20,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;absolute_module&quot;: &quot;click._compat&quot;,
+    &quot;indexed_paths&quot;: [
+      &quot;src/click/_compat.py&quot;
+    ],
+    &quot;citation&quot;: &quot;src/click/utils.py:20&quot;
+  },
+  {
+    &quot;module&quot;: &quot;_compat&quot;,
+    &quot;level&quot;: 1,
+    &quot;member&quot;: &quot;WIN&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 21,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;absolute_module&quot;: &quot;click._compat&quot;,
+    &quot;indexed_paths&quot;: [
+      &quot;src/click/_compat.py&quot;
+    ],
+    &quot;citation&quot;: &quot;src/click/utils.py:21&quot;
+  },
+  {
+    &quot;module&quot;: &quot;globals&quot;,
+    &quot;level&quot;: 1,
+    &quot;member&quot;: &quot;resolve_color_default&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 22,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;absolute_module&quot;: &quot;click.globals&quot;,
+    &quot;indexed_paths&quot;: [
+      &quot;src/click/globals.py&quot;
+    ],
+    &quot;citation&quot;: &quot;src/click/utils.py:22&quot;
+  },
+  {
+    &quot;module&quot;: &quot;typing_extensions&quot;,
+    &quot;alias&quot;: &quot;te&quot;,
+    &quot;line&quot;: 25,
+    &quot;scope&quot;: &quot;&quot;,
+    &quot;level&quot;: 0,
+    &quot;member&quot;: null,
+    &quot;absolute_module&quot;: &quot;typing_extensions&quot;,
+    &quot;indexed_paths&quot;: [],
+    &quot;citation&quot;: &quot;src/click/utils.py:25&quot;
+  },
+  {
+    &quot;module&quot;: &quot;textwrap&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 97,
+    &quot;scope&quot;: &quot;_make_default_short_help&quot;,
+    &quot;level&quot;: 0,
+    &quot;member&quot;: null,
+    &quot;absolute_module&quot;: &quot;textwrap&quot;,
+    &quot;indexed_paths&quot;: [],
+    &quot;citation&quot;: &quot;src/click/utils.py:97&quot;
+  },
+  {
+    &quot;module&quot;: &quot;exceptions&quot;,
+    &quot;level&quot;: 1,
+    &quot;member&quot;: &quot;FileError&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 165,
+    &quot;scope&quot;: &quot;_LazyFile.open&quot;,
+    &quot;absolute_module&quot;: &quot;click.exceptions&quot;,
+    &quot;indexed_paths&quot;: [
+      &quot;src/click/exceptions.py&quot;
+    ],
+    &quot;citation&quot;: &quot;src/click/utils.py:165&quot;
+  },
+  {
+    &quot;module&quot;: &quot;errno&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 541,
+    &quot;scope&quot;: &quot;_PacifyFlushWrapper.flush&quot;,
+    &quot;level&quot;: 0,
+    &quot;member&quot;: null,
+    &quot;absolute_module&quot;: &quot;errno&quot;,
+    &quot;indexed_paths&quot;: [],
+    &quot;citation&quot;: &quot;src/click/utils.py:541&quot;
+  },
+  {
+    &quot;module&quot;: &quot;glob&quot;,
+    &quot;level&quot;: 0,
+    &quot;member&quot;: &quot;glob&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 633,
+    &quot;scope&quot;: &quot;_expand_args&quot;,
+    &quot;absolute_module&quot;: &quot;glob&quot;,
+    &quot;indexed_paths&quot;: [],
+    &quot;citation&quot;: &quot;src/click/utils.py:633&quot;
+  },
+  {
+    &quot;module&quot;: &quot;warnings&quot;,
+    &quot;alias&quot;: null,
+    &quot;line&quot;: 658,
+    &quot;scope&quot;: &quot;__getattr__&quot;,
+    &quot;level&quot;: 0,
+    &quot;member&quot;: null,
+    &quot;absolute_module&quot;: &quot;warnings&quot;,
+    &quot;indexed_paths&quot;: [],
+    &quot;citation&quot;: &quot;src/click/utils.py:658&quot;
+  }
+]</pre></details><details><summary>find_calls</summary><h3>Arguments</h3><pre>{
+  &quot;query&quot;: &quot;echo&quot;,
+  &quot;limit&quot;: 8
+}</pre><h3>Result</h3><pre>[
+  {
+    &quot;path&quot;: &quot;examples/aliases/aliases.py&quot;,
+    &quot;caller&quot;: &quot;push&quot;,
+    &quot;callee_spelling&quot;: &quot;click.echo&quot;,
+    &quot;line&quot;: 104,
+    &quot;column&quot;: 4,
+    &quot;resolution&quot;: {
+      &quot;status&quot;: &quot;static_reference&quot;,
+      &quot;reason&quot;: &quot;import alias to import alias to lexical declaration&quot;,
+      &quot;target&quot;: {
+        &quot;path&quot;: &quot;src/click/utils.py&quot;,
+        &quot;name&quot;: &quot;echo&quot;,
+        &quot;line&quot;: 240,
+        &quot;citation&quot;: &quot;src/click/utils.py:240&quot;
+      }
+    },
+    &quot;citation&quot;: &quot;examples/aliases/aliases.py:104&quot;
+  },
+  {
+    &quot;path&quot;: &quot;examples/aliases/aliases.py&quot;,
+    &quot;caller&quot;: &quot;pull&quot;,
+    &quot;callee_spelling&quot;: &quot;click.echo&quot;,
+    &quot;line&quot;: 110,
+    &quot;column&quot;: 4,
+    &quot;resolution&quot;: {
+      &quot;status&quot;: &quot;static_reference&quot;,
+      &quot;reason&quot;: &quot;import alias to import alias to lexical declaration&quot;,
+      &quot;target&quot;: {
+        &quot;path&quot;: &quot;src/click/utils.py&quot;,
+        &quot;name&quot;: &quot;echo&quot;,
+        &quot;line&quot;: 240,
+        &quot;citation&quot;: &quot;src/click/utils.py:240&quot;
+      }
+    },
+    &quot;citation&quot;: &quot;examples/aliases/aliases.py:110&quot;
+  },
+  {
+    &quot;path&quot;: &quot;examples/aliases/aliases.py&quot;,
+    &quot;caller&quot;: &quot;clone&quot;,
+    &quot;callee_spelling&quot;: &quot;click.echo&quot;,
+    &quot;line&quot;: 116,
+    &quot;column&quot;: 4,
+    &quot;resolution&quot;: {
+      &quot;status&quot;: &quot;static_reference&quot;,
+      &quot;reason&quot;: &quot;import alias to import alias to lexical declaration&quot;,
+      &quot;target&quot;: {
+        &quot;path&quot;: &quot;src/click/utils.py&quot;,
+        &quot;name&quot;: &quot;echo&quot;,
+        &quot;line&quot;: 240,
+        &quot;citation&quot;: &quot;src/click/utils.py:240&quot;
+      }
+    },
+    &quot;citation&quot;: &quot;examples/aliases/aliases.py:116&quot;
+  },
+  {
+    &quot;path&quot;: &quot;examples/aliases/aliases.py&quot;,
+    &quot;caller&quot;: &quot;commit&quot;,
+    &quot;callee_spelling&quot;: &quot;click.echo&quot;,
+    &quot;line&quot;: 122,
+    &quot;column&quot;: 4,
+    &quot;resolution&quot;: {
+      &quot;status&quot;: &quot;static_reference&quot;,
+      &quot;reason&quot;: &quot;import alias to import alias to lexical declaration&quot;,
+      &quot;target&quot;: {
+        &quot;path&quot;: &quot;src/click/utils.py&quot;,
+        &quot;name&quot;: &quot;echo&quot;,
+        &quot;line&quot;: 240,
+        &quot;citation&quot;: &quot;src/click/utils.py:240&quot;
+      }
+    },
+    &quot;citation&quot;: &quot;examples/aliases/aliases.py:122&quot;
+  },
+  {
+    &quot;path&quot;: &quot;examples/aliases/aliases.py&quot;,
+    &quot;caller&quot;: &quot;status&quot;,
+    &quot;callee_spelling&quot;: &quot;click.echo&quot;,
+    &quot;line&quot;: 129,
+    &quot;column&quot;: 4,
+    &quot;resolution&quot;: {
+      &quot;status&quot;: &quot;static_reference&quot;,
+      &quot;reason&quot;: &quot;import alias to import alias to lexical declaration&quot;,
+      &quot;target&quot;: {
+        &quot;path&quot;: &quot;src/click/utils.py&quot;,
+        &quot;name&quot;: &quot;echo&quot;,
+        &quot;line&quot;: 240,
+        &quot;citation&quot;: &quot;src/click/utils.py:240&quot;
+      }
+    },
+    &quot;citation&quot;: &quot;examples/aliases/aliases.py:129&quot;
+  },
+  {
+    &quot;path&quot;: &quot;examples/aliases/aliases.py&quot;,
+    &quot;caller&quot;: &quot;alias&quot;,
+    &quot;callee_spelling&quot;: &quot;click.echo&quot;,
+    &quot;line&quot;: 143,
+    &quot;column&quot;: 4,
+    &quot;resolution&quot;: {
+      &quot;status&quot;: &quot;static_reference&quot;,
+      &quot;reason&quot;: &quot;import alias to import alias to lexical declaration&quot;,
+      &quot;target&quot;: {
+        &quot;path&quot;: &quot;src/click/utils.py&quot;,
+        &quot;name&quot;: &quot;echo&quot;,
+        &quot;line&quot;: 240,
+        &quot;citation&quot;: &quot;src/click/utils.py:240&quot;
+      }
+    },
+    &quot;citation&quot;: &quot;examples/aliases/aliases.py:143&quot;
+  },
+  {
+    &quot;path&quot;: &quot;examples/colors/colors.py&quot;,
+    &quot;caller&quot;: &quot;cli&quot;,
+    &quot;callee_spelling&quot;: &quot;click.echo&quot;,
+    &quot;line&quot;: 32,
+    &quot;column&quot;: 8,
+    &quot;resolution&quot;: {
+      &quot;status&quot;: &quot;static_reference&quot;,
+      &quot;reason&quot;: &quot;import alias to import alias to lexical declaration&quot;,
+      &quot;target&quot;: {
+        &quot;path&quot;: &quot;src/click/utils.py&quot;,
+        &quot;name&quot;: &quot;echo&quot;,
+        &quot;line&quot;: 240,
+        &quot;citation&quot;: &quot;src/click/utils.py:240&quot;
+      }
+    },
+    &quot;citation&quot;: &quot;examples/colors/colors.py:32&quot;
+  },
+  {
+    &quot;path&quot;: &quot;examples/colors/colors.py&quot;,
+    &quot;caller&quot;: &quot;cli&quot;,
+    &quot;callee_spelling&quot;: &quot;click.echo&quot;,
+    &quot;line&quot;: 34,
+    &quot;column&quot;: 8,
+    &quot;resolution&quot;: {
+      &quot;status&quot;: &quot;static_reference&quot;,
+      &quot;reason&quot;: &quot;import alias to import alias to lexical declaration&quot;,
+      &quot;target&quot;: {
+        &quot;path&quot;: &quot;src/click/utils.py&quot;,
+        &quot;name&quot;: &quot;echo&quot;,
+        &quot;line&quot;: 240,
+        &quot;citation&quot;: &quot;src/click/utils.py:240&quot;
+      }
+    },
+    &quot;citation&quot;: &quot;examples/colors/colors.py:34&quot;
+  }
+]</pre></details><details><summary>search_code</summary><h3>Arguments</h3><pre>{
+  &quot;query&quot;: &quot;echo&quot;,
+  &quot;limit&quot;: 8
+}</pre><h3>Result</h3><pre>[
+  {
+    &quot;path&quot;: &quot;examples/aliases/aliases.py&quot;,
+    &quot;line&quot;: 104,
+    &quot;text&quot;: &quot;    click.echo(\&quot;Push\&quot;)&quot;,
+    &quot;truncated&quot;: false,
+    &quot;citation&quot;: &quot;examples/aliases/aliases.py:104&quot;
+  },
+  {
+    &quot;path&quot;: &quot;examples/aliases/aliases.py&quot;,
+    &quot;line&quot;: 110,
+    &quot;text&quot;: &quot;    click.echo(\&quot;Pull\&quot;)&quot;,
+    &quot;truncated&quot;: false,
+    &quot;citation&quot;: &quot;examples/aliases/aliases.py:110&quot;
+  },
+  {
+    &quot;path&quot;: &quot;examples/aliases/aliases.py&quot;,
+    &quot;line&quot;: 116,
+    &quot;text&quot;: &quot;    click.echo(\&quot;Clone\&quot;)&quot;,
+    &quot;truncated&quot;: false,
+    &quot;citation&quot;: &quot;examples/aliases/aliases.py:116&quot;
+  },
+  {
+    &quot;path&quot;: &quot;examples/aliases/aliases.py&quot;,
+    &quot;line&quot;: 122,
+    &quot;text&quot;: &quot;    click.echo(\&quot;Commit\&quot;)&quot;,
+    &quot;truncated&quot;: false,
+    &quot;citation&quot;: &quot;examples/aliases/aliases.py:122&quot;
+  },
+  {
+    &quot;path&quot;: &quot;examples/aliases/aliases.py&quot;,
+    &quot;line&quot;: 129,
+    &quot;text&quot;: &quot;    click.echo(f\&quot;Status for {config.path}\&quot;)&quot;,
+    &quot;truncated&quot;: false,
+    &quot;citation&quot;: &quot;examples/aliases/aliases.py:129&quot;
+  },
+  {
+    &quot;path&quot;: &quot;examples/aliases/aliases.py&quot;,
+    &quot;line&quot;: 143,
+    &quot;text&quot;: &quot;    click.echo(f\&quot;Added &#x27;{alias_}&#x27; as alias for &#x27;{cmd}&#x27;\&quot;)&quot;,
+    &quot;truncated&quot;: false,
+    &quot;citation&quot;: &quot;examples/aliases/aliases.py:143&quot;
+  },
+  {
+    &quot;path&quot;: &quot;examples/colors/colors.py&quot;,
+    &quot;line&quot;: 32,
+    &quot;text&quot;: &quot;        click.echo(click.style(f\&quot;I am colored {color}\&quot;, fg=color))&quot;,
+    &quot;truncated&quot;: false,
+    &quot;citation&quot;: &quot;examples/colors/colors.py:32&quot;
+  },
+  {
+    &quot;path&quot;: &quot;examples/colors/colors.py&quot;,
+    &quot;line&quot;: 34,
+    &quot;text&quot;: &quot;        click.echo(click.style(f\&quot;I am colored {color} and bold\&quot;, fg=color, bold=True))&quot;,
+    &quot;truncated&quot;: false,
+    &quot;citation&quot;: &quot;examples/colors/colors.py:34&quot;
+  }
+]</pre></details><details><summary>get_dependencies</summary><h3>Arguments</h3><pre>{
+  &quot;path&quot;: &quot;src/click/utils.py&quot;
+}</pre><h3>Result</h3><pre>{
+  &quot;path&quot;: &quot;src/click/utils.py&quot;,
+  &quot;module&quot;: &quot;click.utils&quot;,
+  &quot;imports&quot;: [
+    {
+      &quot;module&quot;: &quot;__future__&quot;,
+      &quot;level&quot;: 0,
+      &quot;member&quot;: &quot;annotations&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 1,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;absolute_module&quot;: &quot;__future__&quot;,
+      &quot;indexed_paths&quot;: [],
+      &quot;citation&quot;: &quot;src/click/utils.py:1&quot;
+    },
+    {
+      &quot;module&quot;: &quot;collections.abc&quot;,
+      &quot;alias&quot;: &quot;cabc&quot;,
+      &quot;line&quot;: 3,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;level&quot;: 0,
+      &quot;member&quot;: null,
+      &quot;absolute_module&quot;: &quot;collections.abc&quot;,
+      &quot;indexed_paths&quot;: [],
+      &quot;citation&quot;: &quot;src/click/utils.py:3&quot;
+    },
+    {
+      &quot;module&quot;: &quot;os&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 4,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;level&quot;: 0,
+      &quot;member&quot;: null,
+      &quot;absolute_module&quot;: &quot;os&quot;,
+      &quot;indexed_paths&quot;: [],
+      &quot;citation&quot;: &quot;src/click/utils.py:4&quot;
+    },
+    {
+      &quot;module&quot;: &quot;re&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 5,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;level&quot;: 0,
+      &quot;member&quot;: null,
+      &quot;absolute_module&quot;: &quot;re&quot;,
+      &quot;indexed_paths&quot;: [],
+      &quot;citation&quot;: &quot;src/click/utils.py:5&quot;
+    },
+    {
+      &quot;module&quot;: &quot;sys&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 6,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;level&quot;: 0,
+      &quot;member&quot;: null,
+      &quot;absolute_module&quot;: &quot;sys&quot;,
+      &quot;indexed_paths&quot;: [],
+      &quot;citation&quot;: &quot;src/click/utils.py:6&quot;
+    },
+    {
+      &quot;module&quot;: &quot;typing&quot;,
+      &quot;alias&quot;: &quot;t&quot;,
+      &quot;line&quot;: 7,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;level&quot;: 0,
+      &quot;member&quot;: null,
+      &quot;absolute_module&quot;: &quot;typing&quot;,
+      &quot;indexed_paths&quot;: [],
+      &quot;citation&quot;: &quot;src/click/utils.py:7&quot;
+    },
+    {
+      &quot;module&quot;: &quot;functools&quot;,
+      &quot;level&quot;: 0,
+      &quot;member&quot;: &quot;update_wrapper&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 8,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;absolute_module&quot;: &quot;functools&quot;,
+      &quot;indexed_paths&quot;: [],
+      &quot;citation&quot;: &quot;src/click/utils.py:8&quot;
+    },
+    {
+      &quot;module&quot;: &quot;gettext&quot;,
+      &quot;level&quot;: 0,
+      &quot;member&quot;: &quot;gettext&quot;,
+      &quot;alias&quot;: &quot;_&quot;,
+      &quot;line&quot;: 9,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;absolute_module&quot;: &quot;gettext&quot;,
+      &quot;indexed_paths&quot;: [],
+      &quot;citation&quot;: &quot;src/click/utils.py:9&quot;
+    },
+    {
+      &quot;module&quot;: &quot;types&quot;,
+      &quot;level&quot;: 0,
+      &quot;member&quot;: &quot;ModuleType&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 10,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;absolute_module&quot;: &quot;types&quot;,
+      &quot;indexed_paths&quot;: [],
+      &quot;citation&quot;: &quot;src/click/utils.py:10&quot;
+    },
+    {
+      &quot;module&quot;: &quot;types&quot;,
+      &quot;level&quot;: 0,
+      &quot;member&quot;: &quot;TracebackType&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 11,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;absolute_module&quot;: &quot;types&quot;,
+      &quot;indexed_paths&quot;: [],
+      &quot;citation&quot;: &quot;src/click/utils.py:11&quot;
+    },
+    {
+      &quot;module&quot;: &quot;_compat&quot;,
+      &quot;level&quot;: 1,
+      &quot;member&quot;: &quot;_default_text_stderr&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 13,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;absolute_module&quot;: &quot;click._compat&quot;,
+      &quot;indexed_paths&quot;: [
+        &quot;src/click/_compat.py&quot;
+      ],
+      &quot;citation&quot;: &quot;src/click/utils.py:13&quot;
+    },
+    {
+      &quot;module&quot;: &quot;_compat&quot;,
+      &quot;level&quot;: 1,
+      &quot;member&quot;: &quot;_default_text_stdout&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 14,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;absolute_module&quot;: &quot;click._compat&quot;,
+      &quot;indexed_paths&quot;: [
+        &quot;src/click/_compat.py&quot;
+      ],
+      &quot;citation&quot;: &quot;src/click/utils.py:14&quot;
+    },
+    {
+      &quot;module&quot;: &quot;_compat&quot;,
+      &quot;level&quot;: 1,
+      &quot;member&quot;: &quot;_find_binary_writer&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 15,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;absolute_module&quot;: &quot;click._compat&quot;,
+      &quot;indexed_paths&quot;: [
+        &quot;src/click/_compat.py&quot;
+      ],
+      &quot;citation&quot;: &quot;src/click/utils.py:15&quot;
+    },
+    {
+      &quot;module&quot;: &quot;_compat&quot;,
+      &quot;level&quot;: 1,
+      &quot;member&quot;: &quot;binary_streams&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 16,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;absolute_module&quot;: &quot;click._compat&quot;,
+      &quot;indexed_paths&quot;: [
+        &quot;src/click/_compat.py&quot;
+      ],
+      &quot;citation&quot;: &quot;src/click/utils.py:16&quot;
+    },
+    {
+      &quot;module&quot;: &quot;_compat&quot;,
+      &quot;level&quot;: 1,
+      &quot;member&quot;: &quot;open_stream&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 17,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;absolute_module&quot;: &quot;click._compat&quot;,
+      &quot;indexed_paths&quot;: [
+        &quot;src/click/_compat.py&quot;
+      ],
+      &quot;citation&quot;: &quot;src/click/utils.py:17&quot;
+    },
+    {
+      &quot;module&quot;: &quot;_compat&quot;,
+      &quot;level&quot;: 1,
+      &quot;member&quot;: &quot;should_strip_ansi&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 18,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;absolute_module&quot;: &quot;click._compat&quot;,
+      &quot;indexed_paths&quot;: [
+        &quot;src/click/_compat.py&quot;
+      ],
+      &quot;citation&quot;: &quot;src/click/utils.py:18&quot;
+    },
+    {
+      &quot;module&quot;: &quot;_compat&quot;,
+      &quot;level&quot;: 1,
+      &quot;member&quot;: &quot;strip_ansi&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 19,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;absolute_module&quot;: &quot;click._compat&quot;,
+      &quot;indexed_paths&quot;: [
+        &quot;src/click/_compat.py&quot;
+      ],
+      &quot;citation&quot;: &quot;src/click/utils.py:19&quot;
+    },
+    {
+      &quot;module&quot;: &quot;_compat&quot;,
+      &quot;level&quot;: 1,
+      &quot;member&quot;: &quot;text_streams&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 20,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;absolute_module&quot;: &quot;click._compat&quot;,
+      &quot;indexed_paths&quot;: [
+        &quot;src/click/_compat.py&quot;
+      ],
+      &quot;citation&quot;: &quot;src/click/utils.py:20&quot;
+    },
+    {
+      &quot;module&quot;: &quot;_compat&quot;,
+      &quot;level&quot;: 1,
+      &quot;member&quot;: &quot;WIN&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 21,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;absolute_module&quot;: &quot;click._compat&quot;,
+      &quot;indexed_paths&quot;: [
+        &quot;src/click/_compat.py&quot;
+      ],
+      &quot;citation&quot;: &quot;src/click/utils.py:21&quot;
+    },
+    {
+      &quot;module&quot;: &quot;globals&quot;,
+      &quot;level&quot;: 1,
+      &quot;member&quot;: &quot;resolve_color_default&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 22,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;absolute_module&quot;: &quot;click.globals&quot;,
+      &quot;indexed_paths&quot;: [
+        &quot;src/click/globals.py&quot;
+      ],
+      &quot;citation&quot;: &quot;src/click/utils.py:22&quot;
+    },
+    {
+      &quot;module&quot;: &quot;typing_extensions&quot;,
+      &quot;alias&quot;: &quot;te&quot;,
+      &quot;line&quot;: 25,
+      &quot;scope&quot;: &quot;&quot;,
+      &quot;level&quot;: 0,
+      &quot;member&quot;: null,
+      &quot;absolute_module&quot;: &quot;typing_extensions&quot;,
+      &quot;indexed_paths&quot;: [],
+      &quot;citation&quot;: &quot;src/click/utils.py:25&quot;
+    },
+    {
+      &quot;module&quot;: &quot;textwrap&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 97,
+      &quot;scope&quot;: &quot;_make_default_short_help&quot;,
+      &quot;level&quot;: 0,
+      &quot;member&quot;: null,
+      &quot;absolute_module&quot;: &quot;textwrap&quot;,
+      &quot;indexed_paths&quot;: [],
+      &quot;citation&quot;: &quot;src/click/utils.py:97&quot;
+    },
+    {
+      &quot;module&quot;: &quot;exceptions&quot;,
+      &quot;level&quot;: 1,
+      &quot;member&quot;: &quot;FileError&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 165,
+      &quot;scope&quot;: &quot;_LazyFile.open&quot;,
+      &quot;absolute_module&quot;: &quot;click.exceptions&quot;,
+      &quot;indexed_paths&quot;: [
+        &quot;src/click/exceptions.py&quot;
+      ],
+      &quot;citation&quot;: &quot;src/click/utils.py:165&quot;
+    },
+    {
+      &quot;module&quot;: &quot;errno&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 541,
+      &quot;scope&quot;: &quot;_PacifyFlushWrapper.flush&quot;,
+      &quot;level&quot;: 0,
+      &quot;member&quot;: null,
+      &quot;absolute_module&quot;: &quot;errno&quot;,
+      &quot;indexed_paths&quot;: [],
+      &quot;citation&quot;: &quot;src/click/utils.py:541&quot;
+    },
+    {
+      &quot;module&quot;: &quot;glob&quot;,
+      &quot;level&quot;: 0,
+      &quot;member&quot;: &quot;glob&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 633,
+      &quot;scope&quot;: &quot;_expand_args&quot;,
+      &quot;absolute_module&quot;: &quot;glob&quot;,
+      &quot;indexed_paths&quot;: [],
+      &quot;citation&quot;: &quot;src/click/utils.py:633&quot;
+    },
+    {
+      &quot;module&quot;: &quot;warnings&quot;,
+      &quot;alias&quot;: null,
+      &quot;line&quot;: 658,
+      &quot;scope&quot;: &quot;__getattr__&quot;,
+      &quot;level&quot;: 0,
+      &quot;member&quot;: null,
+      &quot;absolute_module&quot;: &quot;warnings&quot;,
+      &quot;indexed_paths&quot;: [],
+      &quot;citation&quot;: &quot;src/click/utils.py:658&quot;
+    }
+  ],
+  &quot;indexed_dependencies&quot;: [
+    &quot;src/click/_compat.py&quot;,
+    &quot;src/click/exceptions.py&quot;,
+    &quot;src/click/globals.py&quot;
+  ],
+  &quot;note&quot;: &quot;Import evidence only; conditional imports are not proven runtime dependencies.&quot;
+}</pre></details><details><summary>get_callers</summary><h3>Arguments</h3><pre>{
+  &quot;path&quot;: &quot;src/click/utils.py&quot;,
+  &quot;name&quot;: &quot;echo&quot;,
+  &quot;limit&quot;: 8
+}</pre><h3>Result</h3><pre>{
+  &quot;target&quot;: {
+    &quot;path&quot;: &quot;src/click/utils.py&quot;,
+    &quot;name&quot;: &quot;echo&quot;
+  },
+  &quot;callers&quot;: [
+    {
+      &quot;path&quot;: &quot;examples/aliases/aliases.py&quot;,
+      &quot;caller&quot;: &quot;push&quot;,
+      &quot;callee_spelling&quot;: &quot;click.echo&quot;,
+      &quot;line&quot;: 104,
+      &quot;column&quot;: 4,
+      &quot;resolution&quot;: {
+        &quot;status&quot;: &quot;static_reference&quot;,
+        &quot;reason&quot;: &quot;import alias to import alias to lexical declaration&quot;,
+        &quot;target&quot;: {
+          &quot;path&quot;: &quot;src/click/utils.py&quot;,
+          &quot;name&quot;: &quot;echo&quot;,
+          &quot;line&quot;: 240,
+          &quot;citation&quot;: &quot;src/click/utils.py:240&quot;
+        }
+      },
+      &quot;citation&quot;: &quot;examples/aliases/aliases.py:104&quot;
+    },
+    {
+      &quot;path&quot;: &quot;examples/aliases/aliases.py&quot;,
+      &quot;caller&quot;: &quot;pull&quot;,
+      &quot;callee_spelling&quot;: &quot;click.echo&quot;,
+      &quot;line&quot;: 110,
+      &quot;column&quot;: 4,
+      &quot;resolution&quot;: {
+        &quot;status&quot;: &quot;static_reference&quot;,
+        &quot;reason&quot;: &quot;import alias to import alias to lexical declaration&quot;,
+        &quot;target&quot;: {
+          &quot;path&quot;: &quot;src/click/utils.py&quot;,
+          &quot;name&quot;: &quot;echo&quot;,
+          &quot;line&quot;: 240,
+          &quot;citation&quot;: &quot;src/click/utils.py:240&quot;
+        }
+      },
+      &quot;citation&quot;: &quot;examples/aliases/aliases.py:110&quot;
+    },
+    {
+      &quot;path&quot;: &quot;examples/aliases/aliases.py&quot;,
+      &quot;caller&quot;: &quot;clone&quot;,
+      &quot;callee_spelling&quot;: &quot;click.echo&quot;,
+      &quot;line&quot;: 116,
+      &quot;column&quot;: 4,
+      &quot;resolution&quot;: {
+        &quot;status&quot;: &quot;static_reference&quot;,
+        &quot;reason&quot;: &quot;import alias to import alias to lexical declaration&quot;,
+        &quot;target&quot;: {
+          &quot;path&quot;: &quot;src/click/utils.py&quot;,
+          &quot;name&quot;: &quot;echo&quot;,
+          &quot;line&quot;: 240,
+          &quot;citation&quot;: &quot;src/click/utils.py:240&quot;
+        }
+      },
+      &quot;citation&quot;: &quot;examples/aliases/aliases.py:116&quot;
+    },
+    {
+      &quot;path&quot;: &quot;examples/aliases/aliases.py&quot;,
+      &quot;caller&quot;: &quot;commit&quot;,
+      &quot;callee_spelling&quot;: &quot;click.echo&quot;,
+      &quot;line&quot;: 122,
+      &quot;column&quot;: 4,
+      &quot;resolution&quot;: {
+        &quot;status&quot;: &quot;static_reference&quot;,
+        &quot;reason&quot;: &quot;import alias to import alias to lexical declaration&quot;,
+        &quot;target&quot;: {
+          &quot;path&quot;: &quot;src/click/utils.py&quot;,
+          &quot;name&quot;: &quot;echo&quot;,
+          &quot;line&quot;: 240,
+          &quot;citation&quot;: &quot;src/click/utils.py:240&quot;
+        }
+      },
+      &quot;citation&quot;: &quot;examples/aliases/aliases.py:122&quot;
+    },
+    {
+      &quot;path&quot;: &quot;examples/aliases/aliases.py&quot;,
+      &quot;caller&quot;: &quot;status&quot;,
+      &quot;callee_spelling&quot;: &quot;click.echo&quot;,
+      &quot;line&quot;: 129,
+      &quot;column&quot;: 4,
+      &quot;resolution&quot;: {
+        &quot;status&quot;: &quot;static_reference&quot;,
+        &quot;reason&quot;: &quot;import alias to import alias to lexical declaration&quot;,
+        &quot;target&quot;: {
+          &quot;path&quot;: &quot;src/click/utils.py&quot;,
+          &quot;name&quot;: &quot;echo&quot;,
+          &quot;line&quot;: 240,
+          &quot;citation&quot;: &quot;src/click/utils.py:240&quot;
+        }
+      },
+      &quot;citation&quot;: &quot;examples/aliases/aliases.py:129&quot;
+    },
+    {
+      &quot;path&quot;: &quot;examples/aliases/aliases.py&quot;,
+      &quot;caller&quot;: &quot;alias&quot;,
+      &quot;callee_spelling&quot;: &quot;click.echo&quot;,
+      &quot;line&quot;: 143,
+      &quot;column&quot;: 4,
+      &quot;resolution&quot;: {
+        &quot;status&quot;: &quot;static_reference&quot;,
+        &quot;reason&quot;: &quot;import alias to import alias to lexical declaration&quot;,
+        &quot;target&quot;: {
+          &quot;path&quot;: &quot;src/click/utils.py&quot;,
+          &quot;name&quot;: &quot;echo&quot;,
+          &quot;line&quot;: 240,
+          &quot;citation&quot;: &quot;src/click/utils.py:240&quot;
+        }
+      },
+      &quot;citation&quot;: &quot;examples/aliases/aliases.py:143&quot;
+    },
+    {
+      &quot;path&quot;: &quot;examples/colors/colors.py&quot;,
+      &quot;caller&quot;: &quot;cli&quot;,
+      &quot;callee_spelling&quot;: &quot;click.echo&quot;,
+      &quot;line&quot;: 32,
+      &quot;column&quot;: 8,
+      &quot;resolution&quot;: {
+        &quot;status&quot;: &quot;static_reference&quot;,
+        &quot;reason&quot;: &quot;import alias to import alias to lexical declaration&quot;,
+        &quot;target&quot;: {
+          &quot;path&quot;: &quot;src/click/utils.py&quot;,
+          &quot;name&quot;: &quot;echo&quot;,
+          &quot;line&quot;: 240,
+          &quot;citation&quot;: &quot;src/click/utils.py:240&quot;
+        }
+      },
+      &quot;citation&quot;: &quot;examples/colors/colors.py:32&quot;
+    },
+    {
+      &quot;path&quot;: &quot;examples/colors/colors.py&quot;,
+      &quot;caller&quot;: &quot;cli&quot;,
+      &quot;callee_spelling&quot;: &quot;click.echo&quot;,
+      &quot;line&quot;: 34,
+      &quot;column&quot;: 8,
+      &quot;resolution&quot;: {
+        &quot;status&quot;: &quot;static_reference&quot;,
+        &quot;reason&quot;: &quot;import alias to import alias to lexical declaration&quot;,
+        &quot;target&quot;: {
+          &quot;path&quot;: &quot;src/click/utils.py&quot;,
+          &quot;name&quot;: &quot;echo&quot;,
+          &quot;line&quot;: 240,
+          &quot;citation&quot;: &quot;src/click/utils.py:240&quot;
+        }
+      },
+      &quot;citation&quot;: &quot;examples/colors/colors.py:34&quot;
+    }
+  ],
+  &quot;truncated&quot;: true,
+  &quot;note&quot;: &quot;Only supported static references are included; unresolved calls may also reach this declaration.&quot;
+}</pre></details></html>

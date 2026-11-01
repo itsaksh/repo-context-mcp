@@ -1,0 +1,10 @@
+{
+  "tests_run": 37,
+  "passed": 36,
+  "skipped": 1,
+  "failures": 0,
+  "errors": 0,
+  "sdk": "2.3.0",
+  "platform": "Windows",
+  "python": "3.12.14"
+}
