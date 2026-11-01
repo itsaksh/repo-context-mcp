@@ -1,0 +1,8 @@
+{
+  "project": "repo-context-mcp",
+  "wheel": "repo_context_mcp-0.2.0-py3-none-any.whl",
+  "source_modules_match": 5,
+  "license_included": true,
+  "sha256": "e5cadaab86d21862fe7f8a0bb960e6c3d6f446162f8fdf0247fdea59d6a878aa",
+  "installed_cli_help_verified": true
+}
